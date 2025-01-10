@@ -27,8 +27,8 @@ importers:
         specifier: github:lichess-org/ab-stub
         version: https://codeload.github.com/lichess-org/ab-stub/tar.gz/94236bf34dbc9c05daf50f4c9842d859b9142be0
       chessground:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: file:../chessground
+        version: file:../chessground
       chessops:
         specifier: ^0.14.2
         version: 0.14.2
@@ -1322,6 +1322,9 @@ packages:
 
   chessground@9.1.1:
     resolution: {integrity: sha512-X4xrBICrixaLATCn+jGEzk58UXcas+9QqJnwVq9nT7AaX2M1CJLMA0vC7noG0s6Tr2zoAHZ1FOviE5b05MgduQ==}
+
+  chessground@file:../chessground:
+    resolution: {directory: ../chessground, type: directory}
 
   chessops@0.14.2:
     resolution: {integrity: sha512-7DghoMODSN8a17L9JHYBWhLBaSKROKS7+NDsvseNJ502UTbuZ7EYueIAmo1oD+f0TeEqh+jo2gsUFRhGRKAR3g==}
@@ -2940,6 +2943,8 @@ snapshots:
   check-error@2.1.1: {}
 
   chessground@9.1.1: {}
+
+  chessground@file:../chessground: {}
 
   chessops@0.14.2:
     dependencies:
