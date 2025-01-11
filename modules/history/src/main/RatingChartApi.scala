@@ -63,5 +63,6 @@ object RatingChartApi:
     RacingKings,
     Crazyhouse,
     Puzzle,
-    UltraBullet
+    UltraBullet,
+    Chess2
   )

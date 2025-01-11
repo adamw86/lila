@@ -88,6 +88,7 @@ final class RankingApi(
       horde         <- topPerf(PerfType.Horde.id, nb)
       racingKings   <- topPerf(PerfType.RacingKings.id, nb)
       crazyhouse    <- topPerf(PerfType.Crazyhouse.id, nb)
+      crazyhouse    <- topPerf(PerfType.Chess2.id, nb)
     yield lila.rating.UserPerfs.Leaderboards(
       ultraBullet = ultraBullet,
       bullet = bullet,
@@ -101,7 +102,8 @@ final class RankingApi(
       antichess = antichess,
       atomic = atomic,
       horde = horde,
-      racingKings = racingKings
+      racingKings = racingKings,
+      chess2 =chess2
     )
 
   object weeklyStableRanking:

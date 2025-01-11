@@ -56,7 +56,7 @@ export function symbolToFile(char: string): string {
 }
 
 export function supportedVariant(key: string): boolean {
-  return ['standard', 'chess960', 'kingOfTheHill', 'threeCheck', 'fromPosition', 'atomic', 'horde'].includes(
+  return ['standard', 'chess960', 'kingOfTheHill', 'threeCheck', 'fromPosition', 'atomic', 'horde', 'chess2'].includes(
     key,
   );
 }
@@ -552,6 +552,7 @@ export function possibleMovesHandler(
       horde: 5,
       racingKings: 6,
       crazyhouse: 7,
+      chess2: 8,
     };
     const rules: Rules = RULES[ruleTranslation[variant]];
 

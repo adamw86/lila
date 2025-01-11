@@ -4,6 +4,7 @@ import type { GameMode, GameType, InputValue, RealValue, TimeMode, Variant } fro
 
 export const variants: Variant[] = [
   { id: 1, icon: licon.Crown, key: 'standard', name: 'Standard' },
+  { id: 11, icon: licon.CrownElite, key: 'chess2', name: 'Chess²' },
   { id: 10, icon: licon.Crazyhouse, key: 'crazyhouse', name: 'Crazyhouse' },
   { id: 2, icon: licon.DieSix, key: 'chess960', name: 'Chess960' },
   { id: 4, icon: licon.FlagKingHill, key: 'kingOfTheHill', name: 'King of the Hill' },
@@ -18,6 +19,7 @@ export const variants: Variant[] = [
 export const variantsBlindMode: Variant[] = variants.filter(({ key }: Variant) =>
   [
     'standard',
+    'chess2',
     'chess960',
     'kingOfTheHill',
     'threeCheck',

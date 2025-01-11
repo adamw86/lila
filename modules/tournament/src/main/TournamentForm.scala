@@ -124,7 +124,7 @@ object TournamentForm:
   val waitMinuteDefault = 5
 
   val validVariants =
-    List(Standard, Chess960, KingOfTheHill, ThreeCheck, Antichess, Atomic, Horde, RacingKings, Crazyhouse)
+    List(Standard, Chess960, KingOfTheHill, ThreeCheck, Antichess, Atomic, Horde, RacingKings, Crazyhouse, Chess2)
 
   def guessVariant(from: String): Option[Variant] =
     validVariants.find: v =>

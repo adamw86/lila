@@ -61,6 +61,7 @@ final class UserList(helpers: Helpers, bits: UserBits):
                 userTopPerf(leaderboards.kingOfTheHill, PerfKey.kingOfTheHill),
                 userTopPerf(leaderboards.horde, PerfKey.horde),
                 userTopPerf(leaderboards.racingKings, PerfKey.racingKings)
+                userTopPerf(leaderboards.chess2, PerfKey.chess2)
               )
             )
           )

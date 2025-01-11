@@ -27,7 +27,8 @@ object UserPerfsExt:
       PerfKey.horde          -> p.horde,
       PerfKey.racingKings    -> p.racingKings,
       PerfKey.crazyhouse     -> p.crazyhouse,
-      PerfKey.puzzle         -> p.puzzle
+      PerfKey.puzzle         -> p.puzzle,
+      PerfKay.chess2         -> p.chess2
     )
 
     def best8Perfs: List[PerfKey]    = UserPerfs.firstRow ::: bestOf(UserPerfs.secondRow, 4)
@@ -145,6 +146,7 @@ object UserPerfs:
       p,
       p,
       p,
+      p, //??? not sure if this is need but seems like 16 = variants + time controls. so add 1 for Chess²
       puzPerfDefault,
       puzPerfDefault,
       puzPerfDefault
@@ -177,6 +179,7 @@ object UserPerfs:
   def variantLens(variant: chess.variant.Variant): Option[UserPerfs => Perf] =
     variant match
       case chess.variant.Standard      => Some(_.standard)
+      case chess.variant.Chess2        => Some(_.chess2)
       case chess.variant.Chess960      => Some(_.chess960)
       case chess.variant.KingOfTheHill => Some(_.kingOfTheHill)
       case chess.variant.ThreeCheck    => Some(_.threeCheck)
@@ -225,6 +228,7 @@ object UserPerfs:
         horde = perf("horde"),
         racingKings = perf("racingKings"),
         crazyhouse = perf("crazyhouse"),
+        chess2 = perf("chess2"),
         ultraBullet = perf("ultraBullet"),
         bullet = perf("bullet"),
         blitz = perf("blitz"),
@@ -251,6 +255,7 @@ object UserPerfs:
         "horde"          -> notNew(o.horde),
         "racingKings"    -> notNew(o.racingKings),
         "crazyhouse"     -> notNew(o.crazyhouse),
+        "chess2"         -> notNew(o.chess2),
         "ultraBullet"    -> notNew(o.ultraBullet),
         "bullet"         -> notNew(o.bullet),
         "blitz"          -> notNew(o.blitz),
@@ -270,6 +275,7 @@ object UserPerfs:
       rapid: List[LightPerf],
       classical: List[LightPerf],
       crazyhouse: List[LightPerf],
+      chess2: List[LightPerf],
       chess960: List[LightPerf],
       kingOfTheHill: List[LightPerf],
       threeCheck: List[LightPerf],
@@ -287,6 +293,7 @@ object UserPerfs:
     PerfKey.correspondence,
     PerfKey.ultraBullet,
     PerfKey.crazyhouse,
+    PerfKey.chess2,
     PerfKey.chess960,
     PerfKey.kingOfTheHill,
     PerfKey.threeCheck,

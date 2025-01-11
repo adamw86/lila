@@ -89,6 +89,7 @@ final class UserShowSide(helpers: Helpers):
           showNonEmptyPerf(u.perfs.atomic, PerfKey.atomic),
           showNonEmptyPerf(u.perfs.horde, PerfKey.horde),
           showNonEmptyPerf(u.perfs.racingKings, PerfKey.racingKings),
+          showNonEmptyPerf(u.perfs.chess2, PerfKey.chess2),
           u.noBot.option(
             frag(
               hr,

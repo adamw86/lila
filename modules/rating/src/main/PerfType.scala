@@ -161,6 +161,15 @@ enum PerfType(
         nameKey = I18nKey.site.puzzles,
         descKey = I18nKey.site.puzzleDesc
       )
+      
+  case Chess2
+      extends PerfType(
+        PerfId(21),
+        key = PerfKey.chess2,
+        icon = Icon.CrownElite,
+        nameKey = I18nKey(variant.Chess2.name),
+        descKey = I18nKey("Chess² variant")
+      )
 
 object PerfType:
 
@@ -205,7 +214,8 @@ object PerfType:
     PerfKey.antichess,
     PerfKey.atomic,
     PerfKey.horde,
-    PerfKey.racingKings
+    PerfKey.racingKings,
+    PerfKey.chess2
   )
   val isLeaderboardable: Set[PerfKey] = leaderboardable.toSet
 
@@ -230,6 +240,7 @@ object PerfType:
     case PerfKey.atomic        => chess.variant.Atomic
     case PerfKey.horde         => chess.variant.Horde
     case PerfKey.racingKings   => chess.variant.RacingKings
+    case PerfKey.chess2        => chess.variant.Chess2
     case _                     => chess.variant.Standard
 
   def apply(variant: chess.variant.Variant, speed: Speed): PerfType = PerfType(PerfKey(variant, speed))

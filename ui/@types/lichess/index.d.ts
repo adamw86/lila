@@ -209,7 +209,8 @@ type VariantKey =
   | 'atomic'
   | 'horde'
   | 'racingKings'
-  | 'crazyhouse';
+  | 'crazyhouse'
+  | 'chess2';
 
 type Speed = 'ultraBullet' | 'bullet' | 'blitz' | 'rapid' | 'classical' | 'correspondence';
 

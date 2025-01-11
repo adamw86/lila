@@ -15,6 +15,7 @@ const perfIcons: Record<Exclude<Perf, 'fromPosition'>, string> = {
   horde: licon.Keypad,
   racingKings: licon.FlagRacingKings,
   crazyhouse: licon.Crazyhouse,
+  chess2: licon.CrownElite,
 };
 
 export default perfIcons;

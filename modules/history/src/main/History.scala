@@ -5,6 +5,7 @@ import scala.util.Success
 
 case class History(
     standard: RatingsMap,
+    chess2: RagingsMap,
     chess960: RatingsMap,
     kingOfTheHill: RatingsMap,
     antichess: RatingsMap,
@@ -25,6 +26,7 @@ case class History(
   def apply(pk: PerfKey): RatingsMap =
     pk match
       case PerfKey.standard       => standard
+      case PerfKey.chess2         => chess2
       case PerfKey.bullet         => bullet
       case PerfKey.blitz          => blitz
       case PerfKey.rapid          => rapid
@@ -59,6 +61,7 @@ object History:
       def ratingsMap(key: String): RatingsMap = ~doc.getAsOpt[RatingsMap](key)
       History(
         standard = ratingsMap("standard"),
+        chess2 = ratingsMap("standard"),
         chess960 = ratingsMap("chess960"),
         kingOfTheHill = ratingsMap("kingOfTheHill"),
         threeCheck = ratingsMap("threeCheck"),

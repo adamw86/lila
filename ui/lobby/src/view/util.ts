@@ -20,4 +20,5 @@ export const perfNames = {
   crazyhouse: 'Crazyhouse',
   chess960: 'Chess960',
   kingOfTheHill: 'King of the Hill',
+  chess2: 'Chess²',
 };

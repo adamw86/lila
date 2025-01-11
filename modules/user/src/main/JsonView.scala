@@ -143,7 +143,8 @@ object JsonView:
         "antichess"     -> leaderboards.antichess,
         "atomic"        -> leaderboards.atomic,
         "horde"         -> leaderboards.horde,
-        "racingKings"   -> leaderboards.racingKings
+        "racingKings"   -> leaderboards.racingKings,
+        "chess2"        -> leaderboards.chess2
       )
 
   given leaderboardStandardTopOneWrites(using

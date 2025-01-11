@@ -29,6 +29,7 @@ object perf:
     val racingKings: PerfKey    = "racingKings"
     val crazyhouse: PerfKey     = "crazyhouse"
     val puzzle: PerfKey         = "puzzle"
+    val chess2: PerfKey         = "chess2"
     val list: List[PerfKey] = List(
       bullet,
       blitz,
@@ -45,7 +46,8 @@ object perf:
       horde,
       racingKings,
       crazyhouse,
-      puzzle
+      puzzle,
+      chess2
     )
     val all: Set[PerfKey] = list.toSet
     def keyIdMap: Map[PerfKey, PerfId] = Map(
@@ -64,7 +66,8 @@ object perf:
       horde          -> 16,
       racingKings    -> 17,
       crazyhouse     -> 18,
-      puzzle         -> 20
+      puzzle         -> 20,
+      chess2         -> 21,
     )
 
     extension (key: PerfKey)
@@ -83,6 +86,7 @@ object perf:
       case ChessVariant.Standard      => none
       case ChessVariant.FromPosition  => none
       case ChessVariant.Crazyhouse    => crazyhouse.some
+      case ChessVariant.Chess2        => chess2.some
       case ChessVariant.Chess960      => chess960.some
       case ChessVariant.KingOfTheHill => kingOfTheHill.some
       case ChessVariant.ThreeCheck    => threeCheck.some
@@ -145,6 +149,7 @@ object perf:
       horde: Perf,
       racingKings: Perf,
       crazyhouse: Perf,
+      chess2: Perf,
       ultraBullet: Perf,
       puzzle: Perf,
       storm: PuzPerf,
@@ -168,6 +173,7 @@ object perf:
       case "racingKings"    => racingKings
       case "crazyhouse"     => crazyhouse
       case "puzzle"         => puzzle
+      case "chess2"         => chess2
       // impossible because PerfKey can't be instantiated with arbitrary values
       case key => sys.error(s"Unknown perf key: $key")
 
@@ -190,6 +196,7 @@ object perf:
       case "racingKings"    => this.focus(_.racingKings)
       case "crazyhouse"     => this.focus(_.crazyhouse)
       case "puzzle"         => this.focus(_.puzzle)
+      case "chess2"         => this.focus(_.chess2)
       // impossible because PerfKey can't be instantiated with arbitrary values
       case key => sys.error(s"Unknown perf key: $key")
 
